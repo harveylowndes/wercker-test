@@ -1,10 +1,12 @@
 box: golang:1.9
-no-response-timeout: 60
-command-timeout: 60
 
-test:
+build:
   base-path: "/go/src/github.com/harveylowndes/wercker-test"
   steps:
     - script:
       name: test
-      code: make test
+      code: make build
+
+    - script:
+      name: check boilerplate
+      code: ./hack/test.sh cmd pkg

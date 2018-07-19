@@ -9,6 +9,8 @@ GOARCH ?= amd64
 BUILD := 1.0.0
 VERSION ?= ${BUILD}
 
+SRC_DIRS := cmd pkg 
+
 .PHONY: clean
 clean:
 	rm -rf ${BUILD_DIR}
@@ -27,6 +29,5 @@ build:
 
 .PHONY: test
 test:
-	@echo "Testing..."
-	PKG=$(PKG) ./hack/test.sh
+	@./hack/test.sh $(SRC_DIRS)
 	

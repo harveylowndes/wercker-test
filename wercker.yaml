@@ -1,0 +1,10 @@
+box: golang:1.9
+no-response-timeout: 60
+command-timeout: 60
+
+test:
+  base-path: "/go/src/github.com/harveylowndes/wercker-test"
+  steps:
+    - script:
+      name: test
+      code: make test

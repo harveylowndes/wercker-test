@@ -1,6 +1,8 @@
 package name
 
-import "log"
+import (
+	"log"
+)
 
 // Test is just a struct with a name. Interesting, right?
 type Test struct {
@@ -9,10 +11,10 @@ type Test struct {
 
 // CreateName adds "harvey" to the name property on a Test strut.
 // Again, very interesting...
-func CreateName(t *Test) {
+func CreateName(t *Test) string {
 	log.Print("Adding \"Harvey\" as name...")
 	t.name = "Harvey"
-	log.Print("Added.")
+	return "Added Harvey as name."
 }
 
 // GetName gets the name.
